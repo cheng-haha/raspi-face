@@ -26,9 +26,9 @@ btnR=18
 servopin=4
 
 #百度人脸识别API账号信息
-APP_ID = '17677329'
-API_KEY = 'XPiedIZNcx7oSuTrEs4b84Wq'
-SECRET_KEY ='yLVCzcETmGa1CSZZjvP4NQlMPPhpEx4s'
+APP_ID = '****'
+API_KEY = '用自己的key'
+SECRET_KEY ='用自己的key'
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 #图像编码方式
 IMAGE_TYPE='BASE64'
@@ -61,7 +61,7 @@ def playvioce(name):
     pygame.mixer.music.play()
 #发送信息到微信上
 def sendmsg(name,main):
-    url = "https://sc.ftqq.com/SCU65590T5bec2ac90bc1270c5ac1f779d0be5b095dbd2b15d528c.send?"
+    url = "https://sc.ftqq.com/ 用自己的sever酱接口"
     urllib.request.urlopen(url + "text="+name+"&desp="+main)
 
 #上传到百度api进行人脸检测
@@ -139,15 +139,16 @@ if __name__ == '__main__':
                     if(res == 1):
                         rotate(p, 90)
                         time.sleep(3)
-                        os.system("mosquitto_pub -h 192.144.233.149 -t /ESP1/GPIO/16 -m -1")
+                        os.system("mosquitto_pub -h 用自己的云服务器地址 -t /ESP1/GPIO/16 -m -1")
                         print("okkk")
                         rotate(p,0)
                     else:
-                        os.system("mosquitto_pub -h 192.144.233.149 -t /ESP1/GPIO/16 -m -0")
+                        os.system("mosquitto_pub -h 同上 -t /ESP1/GPIO/16 -m -0")
                         print("noooo")
                         time.sleep(1)
                     print('waite 3 seconds to do next')
                     playvioce('waite.mp3')
                     time.sleep(3)
     except KeyboardInterrupt:
+        os.system("mosquitto_pub -h 同上 -t /ESP1/GPIO/16 -m -0")
         pass
