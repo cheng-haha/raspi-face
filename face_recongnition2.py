@@ -28,9 +28,9 @@ b = 2
 
 
 #百度人脸识别API账号信息
-APP_ID = '17677329'
-API_KEY = 'XPiedIZNcx7oSuTrEs4b84Wq'
-SECRET_KEY ='yLVCzcETmGa1CSZZjvP4NQlMPPhpEx4s'
+APP_ID = ''
+API_KEY = ''
+SECRET_KEY =''
 client = AipFace(APP_ID, API_KEY, SECRET_KEY)
 #图像编码方式
 IMAGE_TYPE='BASE64'
@@ -62,7 +62,7 @@ def playvioce(name):
     pygame.mixer.music.play()
 #发送信息到微信上
 def sendmsg(name,main):
-    url = "https://sc.ftqq.com/SCU65590T5bec2ac90bc1270c5ac1f779d0be5b095dbd2b15d528c.send?"
+    url = "https://sc.ftqq.com/用自己的sever酱地址"
     urllib.request.urlopen(url + "text="+name+"&desp="+main)
 
 #上传到百度api进行人脸检测
@@ -139,7 +139,7 @@ if __name__ == '__main__':
                     img = transimage()
                     res = go_api(img)
                     if(res == 1):
-                        os.system("mosquitto_pub -h 192.144.233.149 -t /ESP1/GPIO/16 -m -1")
+                        os.system("mosquitto_pub -h 用自己的云服务器 -t /ESP1/GPIO/16 -m -1")
 
                         setDirection(180)
                         time.sleep(3)
@@ -148,7 +148,7 @@ if __name__ == '__main__':
                         print("okkk")
                         time.sleep(1)
                     else:
-                        os.system("mosquitto_pub -h 192.144.233.149 -t /ESP1/GPIO/16 -m -0")
+                        os.system("mosquitto_pub -h 同上 -t /ESP1/GPIO/16 -m -0")
                         print("noooo")
                         time.sleep(1)
                     print('waite 3 seconds to do next')
