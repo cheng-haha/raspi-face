@@ -3,7 +3,7 @@
  
  一：项目拉取
  
- 		git clone 本项目地址
+ 		git clone https://github.com/cheng-haha/raspi-face.git
 		
 二：运行人脸识别程序
 
